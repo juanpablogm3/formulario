@@ -9,7 +9,7 @@ const requestHandler = (req, res) => {
 
 const server = http.createServer(requestHandler);
 
-const port = process.env.PORT || 3000; // Usar el puerto definido en .env o 3000 por defecto
+const port = process.env.PORT// || 3000; // Usar el puerto definido en .env o 3000 por defecto
 server.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });
