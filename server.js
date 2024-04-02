@@ -1,5 +1,5 @@
 import http from 'http';
-import 'dotenv/config';
+//import 'dotenv/config';
 
 
 const requestHandler = (req, res) => {
@@ -14,3 +14,4 @@ server.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });
 
+// node --env-file .env server.js ----> ejecutar así para .env nativo de VSC
