@@ -1,17 +1,25 @@
-import http from 'http';
-//import 'dotenv/config';
+import express from 'express';
 
 
-const requestHandler = (req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('¡Hola, mundo desde Node.js con import!');
-};
 
-const server = http.createServer(requestHandler);
+const app = express();
 
-const port = process.env.PORT || 3000; // Usar el puerto definido en .env o 3000 por defecto
-server.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
-});
+//Config EXPRESS
+//app.use(express.static(__dirname+'public'));
+//app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//app.use(cors());
+//app.use(cookieParser());
+/* app.use(
+    session({
+        store: MongoStore.create({ mongoUrl: `${process.env.mongo_string}`, ttl: 7200 }),
+        secret: 'secret',
+        resave: true,
+        saveUninitialized: true,
+    })
+); */
 
-// node --env-file .env server.js ----> ejecutar así para .env nativo de VSC
+
+
+// node --env-file .dev.env server.js ----> ejecutar así para .env nativo de VSC
